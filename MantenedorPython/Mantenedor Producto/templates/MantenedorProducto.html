@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mantenedor Producto</title>
+</head>
+
+<body>
+<table width="398" border="1">
+  <form name="form1" method="post" action="/mantenedor">
+    <tr>
+      <td width="183" align="center"><strong>Mantenedor</strong></td>
+      <td width="199" align="center"><strong>Producto</strong></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td> Codigo</td>
+      <td>
+        <label for="txtCod"></label>
+        <input type="text" name="txtCod" id="txtCod">
+      </td>
+    </tr>
+    <tr>
+      <td>Nombre </td>
+      <td><label for="txtNombre"></label>
+      <input type="text" name="txtNombre" id="txtNombre"></td>
+    </tr>
+    <tr>
+      <td> Valor</td>
+      <td>
+        <label for="txtValor"></label>
+        <input type="text" name="txtValor" id="txtValor">
+      </td>
+    </tr>
+    <tr>
+      <tr>
+        <td> Stock</td>
+        <td>
+          <label for="txtStock"></label>
+          <input type="text" name="txtStock" id="txtStock">
+        </td>
+      </tr>
+      <tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><input type="submit" name="btoInsertar" id="btoInsertar" value="Insertar">
+      <input type="submit" name="btoActualizar" id="btoActualizar" value="Actualizar"></td>
+      <td><input type="submit" name="btoEliminar" id="btoEliminar" value="Eliminar"></td>
+    </tr>
+    
+    <table border="1">
+         <thead>
+              <tr>
+                   <td>Codigo</td>
+                   <td>Nombre</td>
+                   <td>Valor</td>
+                   <td>Stock</td>
+              </tr>
+         </thead>
+         <tbody>
+            {% for pro in productos %}
+               <tr>
+                    <td>{{pro.0}}</td>
+                    <td>{{pro.1}}</td>
+                    <td>{{pro.2}}</td>
+                    <td>{{pro.3}}</td>
+               </tr>
+            {% endfor %}
+         </tbody>  
+    </table>
+  
+  </form>
+</table>
+</body>
+</html>
